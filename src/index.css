@@ -1,0 +1,289 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6; /* Light gray background for a modern look */
+}
+
+.app {
+  min-height: 100vh;
+  background-color: #f3f4f6; /* Match body background */
+  color: #1f2937; /* Dark gray text for readability */
+}
+
+.container {
+  padding: 20px;
+  max-width: 600px; /* Slightly wider for a better layout */
+  margin: 0 auto;
+  text-align: center;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #d1d5db; /* Light gray border */
+  transition: all 0.3s ease; /* Smooth transitions for hover/focus */
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* Subtle glow */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6; /* Blue button */
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.metamask-button {
+  background-color: #10b981; /* Green for MetaMask */
+}
+
+.metamask-button:hover {
+  background-color: #059669; /* Darker green on hover */
+}
+
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.error {
+  color: #ef4444;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff; /* White header */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin: 0;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #3b82f6; /* Blue border around profile pic */
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Task List Styles */
+.task-list {
+  background-color: white;
+  color: #1f2937;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.task-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+.add-task-btn {
+  color: #3b82f6;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.add-task-btn span {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.add-task-btn:hover {
+  color: #2563eb;
+  transform: translateX(5px); /* Slide effect on hover */
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9fafb; /* Very light gray background */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #f3f4f6; /* Slightly darker on hover */
+  transform: translateX(5px); /* Slide effect on hover */
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.task-item span {
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.task-item span.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+  animation: completeTask 0.5s ease forwards; /* Animation for completion */
+}
+
+@keyframes completeTask {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: white;
+  color: #1f2937;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(-20px); /* Start slightly above */
+  animation: slideIn 0.3s ease forwards; /* Slide-in animation */
+}
+
+@keyframes slideIn {
+  to { transform: translateY(0); }
+}
+
+.modal-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-buttons button {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.modal-buttons .add-btn {
+  background-color: #3b82f6;
+}
+
+.modal-buttons .cancel-btn {
+  background-color: #6b7280;
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #ef4444;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Balance Display */
+.balance {
+  font-size: 0.9rem;
+  color: #4b5563; /* Gray text */
+  margin-bottom: 15px;
+  background-color: #e5e7eb; /* Light gray background */
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .task-list {
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .task-item {
+    padding: 8px;
+  }
+}
